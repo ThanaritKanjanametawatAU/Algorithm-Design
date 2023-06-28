@@ -44,7 +44,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [Your Email](mailto:your.email@example.com)
+Thanarit Kanjanmetawat - [My Work Email](mailto:u6410322@au.edu)
 
 Project Link: [https://github.com/ThanaritKanjanametawatAU/Algorithm-Design](https://github.com/ThanaritKanjanametawatAU/Algorithm-Design)
 
