@@ -1,29 +1,26 @@
 import time
 import sys
 sys.setrecursionlimit(10000)
-
 N = int(input())
 k = int(input())
-count = 0
+x = [None for _ in range(N)]
 
-def Combination(N, k):
-    global count
-    if N < k or N <= 0:
-        return []
-    elif k == 0:
-        count += 1
-        return [[0] * N]
-    elif N == k:
-        count += 1
-        return [[1] * k]
 
+def Combination(i):
+    global x, N, k
+    if i == N:
+        if sum(x) == k:
+            print(*x)
+            return 1
+        return 0
     else:
-        return list(map(lambda x: [0] + x, Combination(N - 1, k))) + \
-               list(map(lambda x: [1] + x, Combination(N - 1, k - 1)))
+        x[i] = 0
+        v = Combination(i+1)
+        x[i] = 1
+        v += Combination(i+1)
+        return v
 
 st = time.process_time()
-for c in Combination(N, k):
-    print(*c)
-print(count)
+print(Combination(0))
 et = time.process_time()
 print(f"Running Time: {et-st}")
