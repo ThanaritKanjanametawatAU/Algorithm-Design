@@ -43,11 +43,11 @@ Welcome to the Algorithm Design repository! This repository contains various alg
 
 #### Cut Rod
 
-- **[ProblemB-CutRod.py](week3/cutRod/ProblemB-CutRod.py)**: A script solving the cut rod problem using dynamic programming.
+- **[ProblemB-CutRod.py](week3/CutRod/ProblemB-CutRod.py)**: A script solving the cut rod problem using dynamic programming.
 
 #### Minimum Coin
 
-- **[ProblemA-MinCoin.py](week3/minimumCoin/ProblemA-MinCoin.py)**: A script solving the minimum coin problem using dynamic programming.
+- **[ProblemA-MinCoin.py](week3/MinimumCoin/ProblemA-MinCoin.py)**: A script solving the minimum coin problem using dynamic programming.
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
