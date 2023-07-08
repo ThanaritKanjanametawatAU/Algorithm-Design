@@ -2,21 +2,21 @@ import time
 import sys
 sys.setrecursionlimit(10000)
 N = int(input())
-x = [None for _ in range(N)]
-option = ["A", "B", "C"]
-def Combination(i):
-    global x, N, option
+x = [None] * N
+option = ["A","B","C"]
+def Comb(i):
+    global x
     if i == N:
-        print(*x)
         return 1
     else:
-        v = 0
+        s = 0
         for o in option:
             x[i] = o
-            v += Combination(i+1)
-        return v
+            s += Comb(i+1)
+        return s
+
 
 st = time.process_time()
-print(Combination(0))
+print(Comb(0))
 et = time.process_time()
 print(f"Running Time: {et-st}")
