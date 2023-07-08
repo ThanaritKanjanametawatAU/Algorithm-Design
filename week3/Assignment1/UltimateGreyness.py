@@ -8,8 +8,9 @@ for _ in range(N):
 
 x = [None for _ in range(N)]
 minDiff = sys.maxsize
+minRes = None
 def Combination(i):
-    global x, N, minDiff
+    global x, N, minDiff, minRes
     if N <= 0:
         return
     if i == N:
@@ -19,7 +20,9 @@ def Combination(i):
                 if x[j]:
                     vividness *= Colors[j][0]
                     dullness += Colors[j][1]
-            minDiff = min(minDiff, abs(vividness-dullness))
+            if (y:=abs(vividness-dullness)) < minDiff:
+                minDiff = y
+                minRes = x.copy()
 
     else:
         x[i] = 0
@@ -31,5 +34,6 @@ def Combination(i):
 st = time.process_time()
 Combination(0)
 print(minDiff)
+print(minRes)
 et = time.process_time()
 print(f"Running Time: {et-st}")
