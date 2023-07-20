@@ -18,10 +18,13 @@ def maxVal(i, C):
     MaximumValue[i][C] = max(Choose, notChoose)
     return MaximumValue[i][C]
 
+def KnapsackDynamicProgramming():
+    for i in range(N-1,-1,-1):
+        for j in range(C+1):
+            maxVal(i, j)
 
 st = time.process_time()
-print(maxVal(0, C))
-
-print(count)
+KnapsackDynamicProgramming()
+print(MaximumValue[0][C])
 et = time.process_time()
 print(f"Running Time: {et-st}")

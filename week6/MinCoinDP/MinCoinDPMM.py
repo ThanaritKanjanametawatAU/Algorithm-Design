@@ -7,7 +7,6 @@ MinCoin = [None for _ in range(v+1)]
 MinCoin[0] = 0
 calls = [0 for _ in range(v+1)]
 def mincoin(v):
-    print("mincoin(", v, ")")
     if MinCoin[v] != None:
         return MinCoin[v]
 
@@ -22,7 +21,8 @@ def mincoin(v):
     return MinCoin[v]
 
 st = time.process_time()
-print(mincoin(v))
-print(calls)
+for x in range(v+1):
+    y = mincoin(x)
+print(MinCoin[v])
 et = time.process_time()
 print(f"Running Time: {et-st}")
