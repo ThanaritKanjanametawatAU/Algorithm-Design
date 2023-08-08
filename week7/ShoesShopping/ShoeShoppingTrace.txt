@@ -1,0 +1,43 @@
+First, the input is parsed and stored in the data list.
+A memo list of size n+1 (i.e., 6) is initialized with all values set to None.
+memo = [None, None, None, None, None]
+Starting the tracing:
+
+The loop at the bottom starts from i=n (i.e., 5) and goes down to 0, calling the ShoesShopping function for each i.
+
+For i=5, d equals the length of the data list,
+- so the function directly returns 0. memo[5] is set to 0.
+
+For i=4, the function looks at the last shoe with a price of 400.
+- Since it's the last shoe, it can only take that one shoe. memo[4] is set to 400.
+- It can't form a group of 2 shoes since there are only 1 shoes left.
+- It can't form a group of 3 shoes since there are only 1 shoes left.
+
+For i=3, the function considers the shoe with a price of 25. It has three choices:
+- Take this shoe alone: Cost = 25 + memo[4] = 425.
+- Group this shoe with the next one: Cost = 25 + 400 - 0.5*25 + memo[5] = 412.5.
+- It can't form a group of 3 shoes since there are only 2 shoes left.
+The minimum cost is 412.5, so memo[3] is set to 412.5.
+
+
+For i=2, the function considers the shoe with a price of 15:
+- Take this shoe alone: Cost = 15 + memo[3] = 427.5.
+- Group this shoe with the next one: Cost = 15 + 25 - 0.5*15 + memo[4] = 437.5.
+- Group this shoe with the next two: Cost = 15 + 25 + 400 - 15 + memo[5] = 425.
+The minimum cost is 425, so memo[2] is set to 425.
+
+
+For i=1, the function considers the shoe with a price of 27:
+- Take this shoe alone: Cost = 27 + memo[2] = 452.
+- Group this shoe with the next one: Cost = 27 + 15 - 0.5*15 + memo[3] = 439.5.
+- Group this shoe with the next two: Cost = 27 + 15 + 25 - 15 + memo[4] = 452.
+The minimum cost is 439.5, so memo[1] is set to 439.5.
+
+
+For i=0, the function considers the shoe with a price of 100:
+- Take this shoe alone: Cost = 100 + memo[1] = 539.5.
+- Group this shoe with the next one: Cost = 100 + 27 - 0.5*27 + memo[2] = 548.5.
+- Group this shoe with the next two: Cost = 100 + 27 + 15 - 15 + memo[3] = 539.5.
+The minimum cost is 538.5, so memo[0] is set to 538.5.
+
+Finally, the program prints the result, which is the value of memo[0]
