@@ -26,6 +26,7 @@ def RodCut(l):
 
 
 
+
 st = time.process_time()
 print(RodCut(l))
 print(count)
