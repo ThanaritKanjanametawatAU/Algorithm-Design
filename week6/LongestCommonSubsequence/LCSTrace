@@ -1,0 +1,25 @@
+Starting the trace:
+
+The outer loop starts from i = N (i.e., 5) and goes down to 0. The inner loop starts from j = M (i.e., 3) and goes down to 0.
+For i=5 and all j, since it's the end of sequence Ns, all LCS[i][j] values are already initialized to 0.
+For i=4 and j=3, since it's the end of sequence Ms, LCS[i][j] is already initialized to 0.
+For i=4 and j=2, since Ns[4] != Ms[2], the value is max(LCSLength(5, 2), LCSLength(4, 3)) which is max(0, 0) = 0.
+For i=4 and j=1, since Ns[4] != Ms[1], the value is max(LCSLength(5, 1), LCSLength(4, 2)) = max(0, 0) = 0.
+For i=4 and j=0, since Ns[4] != Ms[0], the value is max(LCSLength(5, 0), LCSLength(4, 1)) = max(0, 0) = 0.
+For i=3 and j=3, value is 0 (end of sequence Ms).
+For i=3 and j=2, since Ns[3] != Ms[2], the value is max(LCSLength(4, 2), LCSLength(3, 3)) = max(0, 0) = 0.
+For i=3 and j=1, since Ns[3] != Ms[1], the value is max(LCSLength(4, 1), LCSLength(3, 2)) = max(0, 0) = 0.
+For i=3 and j=0, since Ns[3] != Ms[0], the value is max(LCSLength(4, 0), LCSLength(3, 1)) = max(0, 0) = 0.
+For i=2 and j=3, value is 0.
+For i=2 and j=2, since Ns[2] == Ms[2], the value is 1 + LCSLength(3, 3) = 1.
+For i=2 and j=1, since Ns[2] != Ms[1], the value is max(LCSLength(3, 1), LCSLength(2, 2)) = max(0, 1) = 1.
+For i=2 and j=0, since Ns[2] != Ms[0], the value is max(LCSLength(3, 0), LCSLength(2, 1)) = max(0, 1) = 1.
+For i=1 and j=3, value is 0.
+For i=1 and j=2, since Ns[1] != Ms[2], the value is max(LCSLength(2, 2), LCSLength(1, 3)) = max(1, 0) = 1.
+For i=1 and j=1, since Ns[1] != Ms[1], the value is max(LCSLength(2, 1), LCSLength(1, 2)) = max(1, 1) = 1.
+For i=1 and j=0, since Ns[1] != Ms[0], the value is max(LCSLength(2, 0), LCSLength(1, 1)) = max(1, 1) = 1.
+For i=0 and j=3, value is 0.
+For i=0 and j=2, since Ns[0] != Ms[2], the value is max(LCSLength(1, 2), LCSLength(0, 3)) = max(1, 0) = 1.
+For i=0 and j=1, since Ns[0] == Ms[1], the value is 1 + LCSLength(1, 2) = 2.
+For i=0 and j=0, since Ns[0] != Ms[0], the value is max(LCSLength(1, 0), LCSLength(0, 1)) = max(1, 2) = 2.
+Finally, LCS[0][0] is 2, which is the longest common subsequence length for the given sequences.
