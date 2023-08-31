@@ -98,7 +98,7 @@ PQ = Priority_Queue()
 s = state(Selection_List[-1][0][0], Selection_List[-1][0][1] , House[N-1][N-1])
 PQ.enqueue(s)
 p = []
-for i in range(2*N-1, 0, -1):
+for i in range(2*N-2, 0, -1):
     u = PQ.dequeue()
     p.append(u)
 
@@ -106,7 +106,6 @@ for i in range(2*N-1, 0, -1):
         a = state(v[0], v[1], u.g + v[1])
         PQ.enqueue(a)
 
-del p[0]
 p = list(map(lambda a:(a.i, a.j), p))
 p.reverse()
 print(p)
